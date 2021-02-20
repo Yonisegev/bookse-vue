@@ -1,0 +1,18 @@
+.main-container {
+  max-width: $normal-breakpoint;
+  margin: auto;
+  transition: max-width 0.5s;
+  padding: 0 2rem;
+
+  @media (max-width: $narrow-breakpoint) {
+    max-width: $narrow-breakpoint - 250px;
+    padding: 0 1.5rem;
+  }
+  @media (max-width: $mobile-breakpoint) {
+    max-width: $mobile-breakpoint - 180px;
+    padding: 0 0.5rem;
+  }
+  @media (min-width: 1400px) {
+    max-width: 100%;
+  }
+}

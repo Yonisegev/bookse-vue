@@ -1,0 +1,48 @@
+.book-preview {
+  border: 1px solid whitesmoke;
+  max-width: 300px;
+  margin: 0 0 10px 5px;
+
+  h1 {
+    text-transform: capitalize;
+    font-size: 1.175rem;
+  }
+
+  h2 {
+    font-size: rem(18px);
+    font-weight: 400;
+  }
+
+  .book-img {
+    width: 250px;
+    height: 333px;
+    margin-bottom: 7px;
+  }
+  img {
+    object-fit: cover;
+    height: 100%;
+    border-radius: 3px;
+    box-shadow: 0px 1px 5px 0px rgba(0, 0, 0, 0.75);
+    cursor: pointer;
+    transition: all 0.2s;
+
+    &:hover {
+      box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.85);
+    }
+  }
+
+  .book-actions {
+    .details-btn {
+      a {
+        color: #fff;
+      }
+    }
+    .remove-btn {
+      margin-left: 5px;
+    }
+
+    button {
+      padding: 0.338rem 0.875rem !important;
+    }
+  }
+}

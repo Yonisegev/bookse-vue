@@ -1,0 +1,14 @@
+.review-add {
+  textarea {
+    resize: none;
+  }
+  form {
+    & > * {
+      margin-bottom: 10px;
+    }
+
+    &:first-child {
+      margin-top: 3px;
+    }
+  }
+}

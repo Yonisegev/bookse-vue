@@ -1,0 +1,129 @@
+.details-main {
+  align-items: flex-start;
+}
+.book-details {
+  margin-top: 30px;
+  .book-img {
+    width: 250px;
+    border-radius: 3px;
+  }
+
+  .red {
+    color: red;
+  }
+
+  .green {
+    color: green;
+  }
+
+  main {
+    position: relative;
+
+    .sale-img {
+      margin-bottom: 10px;
+      img {
+        width: 60px;
+      }
+    }
+    .book-info {
+      width: 100%;
+      margin-bottom: 15px;
+
+      @media (max-width: 800px) {
+        flex-direction: column;
+
+        .main-info {
+          margin-bottom: 15px;
+        }
+      }
+      h3 {
+        &:first-of-type {
+          text-transform: capitalize;
+          font-size: rem(22px);
+        }
+      }
+
+      .main-info {
+        flex-basis: 40%;
+      }
+      .more-info {
+        flex-basis: 60%;
+        align-items: center;
+
+        & > * {
+          margin-bottom: 8px;
+        }
+        .category-list {
+          & > *:not(:first-child) {
+            margin-left: 5px;
+          }
+
+          .p-chip {
+            background-color: #eee;
+            padding: 0 0.8rem;
+          }
+        }
+      }
+    }
+  }
+
+  .book-reviews {
+    width: 100%;
+    .reviews-heading {
+      text-align: center;
+      font-size: rem(22px);
+      margin-bottom: 35px;
+      i {
+        margin-left: 3px;
+        cursor: pointer;
+        color: #2196f3;
+
+        transition: color 0.2s;
+
+        &:hover {
+          color: darken(#2196f3, 10%);
+        }
+      }
+    }
+    .review-wrapper {
+      display: flex;
+      width: 100%;
+    }
+    .review {
+      margin-bottom: 15px;
+      width: 100%;
+      position: relative;
+      span {
+        position: absolute;
+        right: -25px;
+        cursor: pointer;
+
+        transition: color 0.2s;
+
+        &:hover {
+          color: red;
+        }
+      }
+      p {
+        margin-bottom: 5px;
+        position: relative;
+        left: -3px;
+      }
+      h3 {
+        font-weight: 500;
+      }
+      h5 {
+        font-weight: normal;
+      }
+    }
+    .no-review-heading {
+      text-align: center;
+      font-weight: normal;
+
+      span {
+        cursor: pointer;
+        color: #2196f3;
+      }
+    }
+  }
+}

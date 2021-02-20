@@ -1,32 +1,26 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
-  </div>
+  <section class="app">
+    <user-msg :msg="userMsg" v-show="userMsg" />
+    <app-header v-if="!homepagePath" />
+    <router-view />
+  </section>
 </template>
 
-<style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
+<script>
+import AppHeader from "@/cmps/AppHeader";
+import UserMsg from "@/cmps/UserMsg";
+export default {
+  components: {
+    AppHeader,
+    UserMsg,
+  },
+  computed: {
+    homepagePath() {
+      return this.$route.path === "/";
+    },
+    userMsg() {
+      return this.$store.getters.userMsg;
+    },
+  },
+};
+</script>
