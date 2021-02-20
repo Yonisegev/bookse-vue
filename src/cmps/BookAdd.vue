@@ -45,6 +45,13 @@ export default {
     },
     async onAddBook(book) {
       await this.$store.dispatch({ type: "saveGoogleBook", book });
+      this.$store.dispatch({
+        type: "setMsg",
+        msg: {
+          type: "success",
+          str: `${book.volumeInfo.title} added succesfully`,
+        },
+      });
     },
   },
   components: {

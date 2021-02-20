@@ -27,12 +27,17 @@ export default {
   },
   methods: {
     async loadBooks() {
-      console.log("inside load books");
       await this.$store.dispatch({ type: "loadBooks" });
     },
     async remove(bookId) {
-      console.log("from bookapp ", bookId);
       await bookService.remove(bookId);
+      this.$store.dispatch({
+        type: "setMsg",
+        msg: {
+          type: "success",
+          str: `Book removed succesfully`,
+        },
+      });
       this.loadBooks();
     },
     setFilter(filterBy) {
